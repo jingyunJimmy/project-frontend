@@ -1,0 +1,57 @@
+<div class="container bg-light rounded shadow">
+    <div class="row">
+        <div class='col-12 p-4 d-flex justify-content-between'>
+            <div><span class="badge bg-primary fs-3">{{companyName}}</span></div>
+
+            <button class="btn btn-primary" (click)="logout()">Logout</button>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class='col-12 col-md-6'>
+            <div class="row text-center">
+                <div class='col-12 col-md-4'>
+                    <i class="bi bi-person-fill h1"></i>
+                </div>
+                <div class='col-12 col-md-8'>
+                    <h3>Number of Employees</h3>
+                    <h4>{{employees?.length}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class='col-12 col-md-6'>
+            <div class="row text-center">
+                <div class='col-12 col-md-4'>
+                    <i class="bi bi-bank2 h1"></i>
+                </div>
+                <div class='col-12 col-md-8'>
+                    <h3>Average Salary</h3>
+                    <h4>{{averageSalary | currency:'AUD'}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-8 m-auto">
+            <app-contact-table
+                [contactType]="'Customer'"
+                [tableData]="customers"
+            ></app-contact-table>
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-8 m-auto">
+            <app-contact-table
+                [contactType]="'Supplier'"
+                [tableData]="suppliers"
+            ></app-contact-table>
+        </div>
+    </div>
+
+    <div class="row my-4" *ngIf="error">
+        <div class='col-12 p-4'>
+            <h3 class="text-danger">Error: {{error}}</h3>
+        </div>
+    </div>
+</div>

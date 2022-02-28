@@ -14,7 +14,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@interfaces/*": ["src/app/common/interfaces/*"],
+      "@services/*": ["src/app/common/services/*"],
+      "@pipes/*": ["src/app/common/pipes*"],
+      "@interceptors/*": ["src/app/common/interceptors/*"],
+      "@guards/*": ["src/app/common/guards/*"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -1,0 +1,14 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">{{ contactType }}</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of tableData">
+        <td>{{data.firstName + " " + data.lastName}}</td>
+        <td>{{data.sumOfInvoices}}</td>
+      </tr>
+    </tbody>
+  </table>
